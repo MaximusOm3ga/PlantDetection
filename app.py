@@ -5,6 +5,8 @@ import torch
 import torch.nn.functional as F
 from torchvision import transforms, datasets
 from cnn_model import CNN
+import csv
+
 
 st.set_page_config(
     page_title="Plant Disease Classifier",
@@ -248,9 +250,18 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+def load_class_names(path):
+    rows = []
+    with open(path, "r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        for r in reader:
+            rows.append((int(r["class_index"]), r["class_name"]))
+    rows.sort(key=lambda x: x[0])
+    return [name for _, name in rows]
+
+
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "cnn_classifier_best.pth"
-DATA_PATH = Path(r"C:\Users\sauri\Coding\NN\proj_code\datasets\plantvillage_DatasetNew\color")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 transform = transforms.Compose([
@@ -261,11 +272,12 @@ transform = transforms.Compose([
 
 def pretty_name(name: str) -> str:
     return name.replace("___", " - ").replace("_", " ")
+CLASS_CSV = BASE_DIR / "class_order.csv"
+
 
 @st.cache_resource
 def load_artifacts():
-    data = datasets.ImageFolder(root=str(DATA_PATH), transform=transform)
-    class_names = data.classes
+    class_names = load_class_names(CLASS_CSV)
     model = CNN(num_classes=len(class_names)).to(device)
     state = torch.load(str(MODEL_PATH), map_location=device)
     model.load_state_dict(state)
