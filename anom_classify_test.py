@@ -26,25 +26,6 @@ model=CNN(num_classes=len(test_data.classes)).to(device)
 model.load_state_dict(torch.load("cnn_classifier_best.pth"))
 model.eval()
 
-y_true,y_pred=[],[]
-
-with torch.no_grad():
-    for imgs, labels in test_loader:
-        imgs, labels = imgs.to(device), labels.to(device)
-        outputs = model(imgs)
-        probs = f.softmax(outputs, dim=1)
-        preds = torch.argmax(probs, dim=1)
-
-        y_true.extend(labels.cpu().numpy())
-        y_pred.extend(preds.cpu().numpy())
-
-
-print("Classification Report: ")
-print(classification_report(y_true,y_pred,target_names=test_data.classes))
-
-print("Confusion Matrix:")
-print(confusion_matrix(y_true, y_pred))
-
 def cnn_anom_det(path):
     img=Image.open(path).convert("RGB")
     img_tensor=transform(img).unsqueeze(0).to(device)
@@ -60,4 +41,22 @@ def cnn_anom_det(path):
     return predicted_class, confidence
 
 
+if __name__ =="__main__":
+    y_true,y_pred=[],[]
 
+    with torch.no_grad():
+        for imgs, labels in test_loader:
+            imgs, labels = imgs.to(device), labels.to(device)
+            outputs = model(imgs)
+            probs = f.softmax(outputs, dim=1)
+            preds = torch.argmax(probs, dim=1)
+
+            y_true.extend(labels.cpu().numpy())
+            y_pred.extend(preds.cpu().numpy())
+
+
+    print("Classification Report: ")
+    print(classification_report(y_true,y_pred,target_names=test_data.classes))
+
+    print("Confusion Matrix:")
+    print(confusion_matrix(y_true, y_pred))
