@@ -45,7 +45,7 @@ if uploaded_file is not None:
     st.image(image, caption="Uploaded image", use_container_width=True)
 
     if st.button("Predict"):
-        with st.spinner("Running prediction..."):
+        with st.spinner("Running prediction"):
             with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
                 image.save(tmp.name)
                 temp_path = tmp.name
