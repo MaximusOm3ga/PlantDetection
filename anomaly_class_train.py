@@ -127,5 +127,5 @@ train(
     num_epochs,
     device,
     criterion,
-    checkpoint_path="cnn_classifier_best.pth"
+    checkpoint_path="models/cnn_classifier_best.pth"
 )

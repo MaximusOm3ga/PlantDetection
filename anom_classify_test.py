@@ -23,7 +23,7 @@ test_data=datasets.ImageFolder(root=test_path,transform=transform)
 test_loader=DataLoader(test_data,batch_size=32, shuffle=False)
 
 model=CNN(num_classes=len(test_data.classes)).to(device)
-model.load_state_dict(torch.load("cnn_classifier_best.pth"))
+model.load_state_dict(torch.load("models/cnn_classifier_best.pth"))
 model.eval()
 
 def cnn_anom_det(path):
