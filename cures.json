@@ -1,0 +1,347 @@
+{
+  "Apple___Apple_scab": {
+    "type": "fungal",
+    "symptoms": ["Olive-green leaf spots", "Leaf curling", "Fruit lesions"],
+    "treatment": {
+      "immediate": ["Remove infected leaves and fruits"],
+      "organic": ["Apply neem oil or sulfur spray"],
+      "chemical": ["Use captan or myclobutanil fungicide"]
+    },
+    "prevention": ["Ensure airflow", "Prune regularly", "Avoid wet foliage"]
+  },
+
+  "Apple___Black_rot": {
+    "type": "fungal",
+    "symptoms": ["Brown leaf spots", "Fruit rot with concentric rings"],
+    "treatment": {
+      "immediate": ["Remove infected parts"],
+      "organic": ["Apply copper-based sprays"],
+      "chemical": ["Use thiophanate-methyl"]
+    },
+    "prevention": ["Sanitize orchard", "Remove mummified fruits"]
+  },
+
+  "Apple___Cedar_apple_rust": {
+    "type": "fungal",
+    "symptoms": ["Yellow-orange leaf spots", "Deformed leaves"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Sulfur sprays"],
+      "chemical": ["Myclobutanil fungicide"]
+    },
+    "prevention": ["Avoid planting near cedar trees"]
+  },
+
+  "Apple___healthy": {
+    "status": "healthy",
+    "advice": ["Maintain watering", "Regular monitoring", "Balanced fertilization"]
+  },
+
+  "Blueberry___healthy": {
+    "status": "healthy",
+    "advice": ["Maintain soil acidity", "Regular pruning", "Monitor pests"]
+  },
+
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "type": "fungal",
+    "symptoms": ["White powder on leaves", "Leaf distortion"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Neem oil spray"],
+      "chemical": ["Sulfur fungicide"]
+    },
+    "prevention": ["Improve airflow", "Avoid overcrowding"]
+  },
+
+  "Cherry_(including_sour)___healthy": {
+    "status": "healthy",
+    "advice": ["Prune regularly", "Monitor for pests"]
+  },
+
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "type": "fungal",
+    "symptoms": ["Rectangular gray lesions", "Leaf drying"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Crop rotation"],
+      "chemical": ["Azoxystrobin fungicide"]
+    },
+    "prevention": ["Use resistant varieties"]
+  },
+
+  "Corn_(maize)___Common_rust_": {
+    "type": "fungal",
+    "symptoms": ["Reddish pustules on leaves"],
+    "treatment": {
+      "immediate": ["Remove infected parts"],
+      "organic": ["Neem oil"],
+      "chemical": ["Triazole fungicides"]
+    },
+    "prevention": ["Use resistant hybrids"]
+  },
+
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "type": "fungal",
+    "symptoms": ["Long gray-green lesions"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Crop rotation"],
+      "chemical": ["Mancozeb fungicide"]
+    },
+    "prevention": ["Avoid high humidity"]
+  },
+
+  "Corn_(maize)___healthy": {
+    "status": "healthy",
+    "advice": ["Maintain nutrients", "Regular inspection"]
+  },
+
+  "Grape___Black_rot": {
+    "type": "fungal",
+    "symptoms": ["Brown leaf spots", "Shriveled fruit"],
+    "treatment": {
+      "immediate": ["Remove infected fruit"],
+      "organic": ["Neem oil"],
+      "chemical": ["Captan fungicide"]
+    },
+    "prevention": ["Prune vines"]
+  },
+
+  "Grape___Esca_(Black_Measles)": {
+    "type": "fungal",
+    "symptoms": ["Leaf discoloration", "Fruit spotting"],
+    "treatment": {
+      "immediate": ["Remove infected wood"],
+      "organic": ["Biocontrol agents"],
+      "chemical": ["Limited effectiveness"]
+    },
+    "prevention": ["Avoid trunk injuries"]
+  },
+
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "type": "fungal",
+    "symptoms": ["Dark leaf spots"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Copper fungicide"]
+    },
+    "prevention": ["Ensure airflow"]
+  },
+
+  "Grape___healthy": {
+    "status": "healthy",
+    "advice": ["Proper pruning", "Monitor regularly"]
+  },
+
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "type": "bacterial",
+    "symptoms": ["Yellow shoots", "Misshapen fruit"],
+    "treatment": {
+      "immediate": ["Remove infected trees"],
+      "organic": ["Control psyllids"],
+      "chemical": ["Insecticides for vector control"]
+    },
+    "prevention": ["Use disease-free planting stock"]
+  },
+
+  "Peach___Bacterial_spot": {
+    "type": "bacterial",
+    "symptoms": ["Leaf spots", "Fruit pitting"],
+    "treatment": {
+      "immediate": ["Remove infected parts"],
+      "organic": ["Copper spray"],
+      "chemical": ["Oxytetracycline"]
+    },
+    "prevention": ["Avoid overhead irrigation"]
+  },
+
+  "Peach___healthy": {
+    "status": "healthy",
+    "advice": ["Regular pruning", "Balanced nutrition"]
+  },
+
+  "Pepper,_bell___Bacterial_spot": {
+    "type": "bacterial",
+    "symptoms": ["Water-soaked spots", "Leaf drop"],
+    "treatment": {
+      "immediate": ["Remove infected plants"],
+      "organic": ["Copper sprays"],
+      "chemical": ["Streptomycin"]
+    },
+    "prevention": ["Use certified seeds"]
+  },
+
+  "Pepper,_bell___healthy": {
+    "status": "healthy",
+    "advice": ["Maintain spacing", "Monitor leaves"]
+  },
+
+  "Potato___Early_blight": {
+    "type": "fungal",
+    "symptoms": ["Target-like spots", "Leaf yellowing"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Chlorothalonil"]
+    },
+    "prevention": ["Crop rotation"]
+  },
+
+  "Potato___Late_blight": {
+    "type": "fungal",
+    "symptoms": ["Dark lesions", "White mold underside"],
+    "treatment": {
+      "immediate": ["Destroy infected plants"],
+      "organic": ["Copper fungicide"],
+      "chemical": ["Metalaxyl"]
+    },
+    "prevention": ["Avoid humid conditions"]
+  },
+
+  "Potato___healthy": {
+    "status": "healthy",
+    "advice": ["Monitor moisture", "Regular inspection"]
+  },
+
+  "Raspberry___healthy": {
+    "status": "healthy",
+    "advice": ["Prune regularly", "Check pests"]
+  },
+
+  "Soybean___healthy": {
+    "status": "healthy",
+    "advice": ["Maintain soil fertility"]
+  },
+
+  "Squash___Powdery_mildew": {
+    "type": "fungal",
+    "symptoms": ["White powder on leaves"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Sulfur fungicide"]
+    },
+    "prevention": ["Improve airflow"]
+  },
+
+  "Strawberry___Leaf_scorch": {
+    "type": "fungal",
+    "symptoms": ["Dark leaf margins"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Compost tea"],
+      "chemical": ["Fungicides"]
+    },
+    "prevention": ["Avoid overcrowding"]
+  },
+
+  "Strawberry___healthy": {
+    "status": "healthy",
+    "advice": ["Mulch properly", "Water regularly"]
+  },
+
+  "Tomato___Bacterial_spot": {
+    "type": "bacterial",
+    "symptoms": ["Small dark spots", "Leaf drop"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Copper spray"],
+      "chemical": ["Streptomycin"]
+    },
+    "prevention": ["Avoid wet leaves"]
+  },
+
+  "Tomato___Early_blight": {
+    "type": "fungal",
+    "symptoms": ["Concentric rings", "Leaf yellowing"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Chlorothalonil"]
+    },
+    "prevention": ["Crop rotation"]
+  },
+
+  "Tomato___Late_blight": {
+    "type": "fungal",
+    "symptoms": ["Dark lesions", "Rapid spread"],
+    "treatment": {
+      "immediate": ["Destroy infected plants"],
+      "organic": ["Copper fungicide"],
+      "chemical": ["Metalaxyl"]
+    },
+    "prevention": ["Reduce humidity"]
+  },
+
+  "Tomato___Leaf_Mold": {
+    "type": "fungal",
+    "symptoms": ["Yellow spots", "Mold underside"],
+    "treatment": {
+      "immediate": ["Remove affected leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Chlorothalonil"]
+    },
+    "prevention": ["Improve ventilation"]
+  },
+
+  "Tomato___Septoria_leaf_spot": {
+    "type": "fungal",
+    "symptoms": ["Small circular spots"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Copper spray"],
+      "chemical": ["Mancozeb"]
+    },
+    "prevention": ["Avoid splashing water"]
+  },
+
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "type": "pest",
+    "symptoms": ["Yellow speckling", "Webbing"],
+    "treatment": {
+      "immediate": ["Wash leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Miticides"]
+    },
+    "prevention": ["Maintain humidity"]
+  },
+
+  "Tomato___Target_Spot": {
+    "type": "fungal",
+    "symptoms": ["Circular brown spots"],
+    "treatment": {
+      "immediate": ["Remove infected leaves"],
+      "organic": ["Neem oil"],
+      "chemical": ["Fungicides"]
+    },
+    "prevention": ["Crop rotation"]
+  },
+
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "type": "viral",
+    "symptoms": ["Leaf curling", "Stunted growth"],
+    "treatment": {
+      "immediate": ["Remove infected plants"],
+      "organic": ["Control whiteflies"],
+      "chemical": ["Insecticides"]
+    },
+    "prevention": ["Use resistant varieties"]
+  },
+
+  "Tomato___Tomato_mosaic_virus": {
+    "type": "viral",
+    "symptoms": ["Mosaic leaf pattern"],
+    "treatment": {
+      "immediate": ["Remove infected plants"],
+      "organic": ["Sanitize tools"],
+      "chemical": ["No chemical cure"]
+    },
+    "prevention": ["Use certified seeds"]
+  },
+
+  "Tomato___healthy": {
+    "status": "healthy",
+    "advice": ["Maintain watering", "Check regularly"]
+  }
+}

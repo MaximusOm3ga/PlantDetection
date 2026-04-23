@@ -1,9 +1,10 @@
 from pathlib import Path
+import json
 import streamlit as st
 from PIL import Image
 import torch
 import torch.nn.functional as F
-from torchvision import transforms, datasets
+from torchvision import transforms
 from cnn_model import CNN
 import csv
 
@@ -243,9 +244,6 @@ st.markdown(
     }
     </style>
 
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
     """,
     unsafe_allow_html=True
 )
@@ -273,6 +271,7 @@ transform = transforms.Compose([
 def pretty_name(name: str) -> str:
     return name.replace("___", " - ").replace("_", " ")
 CLASS_CSV = BASE_DIR / "class_order.csv"
+CURES_JSON = BASE_DIR / "cures.json"
 
 
 @st.cache_resource
@@ -283,6 +282,55 @@ def load_artifacts():
     model.load_state_dict(state)
     model.eval()
     return model, class_names
+
+
+@st.cache_data
+def load_cures(path: Path):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def format_label(text: str) -> str:
+    return text.replace("_", " ").strip().title()
+
+
+def render_cure_details(pred_class: str, cures_data: dict):
+    entry = cures_data.get(pred_class)
+    if not isinstance(entry, dict):
+        st.info("No treatment details found for this class.")
+        return
+
+    if entry.get("status") == "healthy":
+        st.success("Plant appears healthy.")
+        advice = entry.get("advice", [])
+        if advice:
+            st.markdown("**Advice**")
+            st.markdown("\n".join(f"- {item}" for item in advice))
+        return
+
+    disease_type = entry.get("type")
+    if disease_type:
+        st.markdown(f"**Type:** {format_label(str(disease_type))}")
+
+    symptoms = entry.get("symptoms", [])
+    if symptoms:
+        st.markdown("**Symptoms**")
+        st.markdown("\n".join(f"- {item}" for item in symptoms))
+
+    treatment = entry.get("treatment", {})
+    if isinstance(treatment, dict) and treatment:
+        st.markdown("**Treatment**")
+        for key, value in treatment.items():
+            st.markdown(f"**{format_label(str(key))}**")
+            if isinstance(value, list) and value:
+                st.markdown("\n".join(f"- {item}" for item in value))
+            elif value:
+                st.markdown(f"- {value}")
+
+    prevention = entry.get("prevention", [])
+    if prevention:
+        st.markdown("**Prevention**")
+        st.markdown("\n".join(f"- {item}" for item in prevention))
 
 def predict(image: Image.Image, model, class_names):
     x = transform(image.convert("RGB")).unsqueeze(0).to(device)
@@ -298,6 +346,11 @@ try:
 except Exception as e:
     st.error(f"Failed to load model/classes: {e}")
     st.stop()
+
+try:
+    cures_data = load_cures(CURES_JSON)
+except Exception:
+    cures_data = {}
 
 st.markdown(
     """
@@ -337,6 +390,8 @@ with right:
         st.markdown('<div class="pred-label">Predicted class</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="pred-value">{pretty_name(pred_class)}</div>', unsafe_allow_html=True)
         st.metric("Confidence", f"{confidence * 100:.2f}%")
+        st.markdown('<div class="pred-label">Relevant details</div>', unsafe_allow_html=True)
+        render_cure_details(pred_class, cures_data)
     st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown(f'<div class="footer-text">Device: {device} | Classes: {len(class_names)}</div>', unsafe_allow_html=True)
